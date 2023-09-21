@@ -8,4 +8,5 @@ public class SecuredResourceAspect {
 
     private static final String MESSAGE_USER_UNATHORIZED = "Forbidden!";
 
+
 }
