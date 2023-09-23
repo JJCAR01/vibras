@@ -29,7 +29,7 @@ public class ServicioAplicacionLogin {
         if(usuario == null){
             throw new IllegalStateException("usuario o clave incorrecta");
         }
-        String roles = usuario.getTipoUsuario();
-        return  new DtoRespuesta<>(this.servicioGenerarToken.ejecutar(dto.getUsuario(), roles));
+
+        return  new DtoRespuesta<>(this.servicioGenerarToken.ejecutar(dto.getUsuario()));
     }
 }

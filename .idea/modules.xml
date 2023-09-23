@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.vibras.vibras.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.vibras.vibras.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/vibras.iml" filepath="$PROJECT_DIR$/.idea/vibras.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/vibras.vibras.main~1.iml" filepath="$PROJECT_DIR$/.idea/modules/vibras.vibras.main~1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/vibras.vibras.test~1.iml" filepath="$PROJECT_DIR$/.idea/modules/vibras.vibras.test~1.iml" />

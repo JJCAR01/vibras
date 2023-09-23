@@ -4,7 +4,11 @@ package com.vibras.dominio.modelo;
 
 import com.vibras.dominio.utilitario.UtilNumero;
 import com.vibras.dominio.utilitario.UtilTexto;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Usuario {
     private final String nombre;
     private final String apellido;
@@ -38,22 +42,7 @@ public class Usuario {
         this.celular = celular;
     }
 
-    public String getNombre(){
-        return  nombre;
-    }
-    public String getApellido(){
-        return  apellido;
-    }
-    public int getTipoDocumento(){ return  tipoDocumento;}
-    public String getNumeroDocumento(){ return  numeroDocumento;}
-    public  String getContrasena(){
-        return  contrasena;
-    }
-    public  String getRol(){
-        return rol;
-    }
-    public String getCelular(){return celular; }
-    public String getCorreo(){ return  correo; }
+
     public  void  asignarClaveCifrada(String contrasena){
         this.contrasena = contrasena;
     }
