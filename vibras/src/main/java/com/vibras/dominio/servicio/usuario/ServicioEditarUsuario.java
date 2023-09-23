@@ -3,7 +3,9 @@ package com.vibras.dominio.servicio.usuario;
 
 import com.vibras.dominio.modelo.Usuario;
 import com.vibras.dominio.puerto.RepositorioUsuario;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServicioEditarUsuario {
     private static final String MENSAJE_NO_EXISTE = "No existe el Usuario con los datos ingresados";
 

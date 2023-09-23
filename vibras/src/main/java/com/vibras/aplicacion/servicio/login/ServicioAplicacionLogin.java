@@ -2,13 +2,10 @@ package com.vibras.aplicacion.servicio.login;
 
 import com.vibras.aplicacion.dto.DtoLogin;
 import com.vibras.aplicacion.dto.DtoRespuesta;
-import com.vibras.dominio.modelo.RolUsuario;
 import com.vibras.dominio.modelo.Usuario;
 import com.vibras.dominio.puerto.RepositorioUsuario;
 import com.vibras.dominio.servicio.ServicioCifrarTexto;
 import com.vibras.dominio.servicio.ServicioGenerarToken;
-
-import java.util.List;
 
 public class ServicioAplicacionLogin {
 
