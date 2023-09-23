@@ -9,13 +9,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DtoUsuario {
-    private String nombre;
-    private String apellido;
-    private String correo;
-    private String contrasena;
-    private int tipoUsuario;
-    private String celular;
+public class DtoPago {
 
-
+    private Integer usuario;
+    private Integer plan;
+    private String tipoPago;
 }
