@@ -20,8 +20,8 @@ public class ServicioAplicacionGuardarUsuario {
         this.servicioCifrarTexto = servicioCifrarTexto;
     }
     public DtoRespuesta<Long> ejecutar(DtoUsuario dto){
-        List<RolUsuario> roles = Arrays.asList(RolUsuario.of("CLIENTE"));
-        Usuario usuario = Usuario.of(dto.getNombre(), dto.getApellido(), dto.getCorreo(), dto.getContrasena(), dto.getTipoUsuario(), dto.getCelular());
+
+        Usuario usuario = Usuario.of(dto.getNombre(), dto.getApellido(), dto.getTipoDocumento(), dto.getNumeroDocumento(), dto.getCorreo(), dto.getContrasena(), dto.getRol(), dto.getCelular());
         String claveCifrado = this.servicioCifrarTexto.ejecutar(usuario.getContrasena());
         usuario.asignarClaveCifrada(claveCifrado);
         return  new DtoRespuesta<>(this.servicioGuardarUsuario.ejecutar(usuario));

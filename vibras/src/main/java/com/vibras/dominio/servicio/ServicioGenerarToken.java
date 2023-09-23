@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface ServicioGenerarToken {
 
-    String ejecutar(String usuario, int roles);
+    String ejecutar(String usuario, String roles);
 }

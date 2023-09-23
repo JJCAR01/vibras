@@ -1,37 +1,33 @@
 package com.vibras.aplicacion.dto;
 
 
+import lombok.Getter;
+
+@Getter
 public class DtoUsuario {
     private String nombre;
     private String apellido;
+    private int tipoDocumento;
+    private String numeroDocumento;
     private String correo;
     private String contrasena;
-    private int tipoUsuario;
+    private String rol;
     private String celular;
 
     public DtoUsuario(){}
 
-    public DtoUsuario(String nombre, String apellido, String correo, String contrasena, int tipoUsuario,String celular) {
+    public DtoUsuario(String nombre, String apellido, int tipoDocumento, String numeroDocumento, String correo, String contrasena, String rol, String celular) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.tipoDocumento = tipoDocumento;
+        this.numeroDocumento = numeroDocumento;
         this.correo = correo;
         this.contrasena = contrasena;
-        this.tipoUsuario = tipoUsuario;
+        this.rol = rol;
         this.celular = celular;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public String getApellido() {
-        return apellido;
-    }
-    public String getContrasena(){ return contrasena;}
-    public String getCelular(){ return  celular;}
-    public String getCorreo(){ return  correo;}
-
-    public int getTipoUsuario(){ return  tipoUsuario; }
 
 
 }

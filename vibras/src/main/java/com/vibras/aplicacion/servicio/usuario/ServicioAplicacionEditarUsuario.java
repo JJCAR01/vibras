@@ -19,8 +19,8 @@ public class ServicioAplicacionEditarUsuario {
     }
 
     public DtoRespuesta<Long> ejecutar(DtoUsuario dto, Long codigo){
-        List<RolUsuario> roles =Arrays.asList(RolUsuario.of("cliente"));
-        Usuario usuario = Usuario.of(dto.getNombre(),dto.getApellido(),dto.getCorreo(),dto.getContrasena(),dto.getTipoUsuario(),dto.getCelular());
+
+        Usuario usuario = Usuario.of(dto.getNombre(),dto.getApellido(), dto.getTipoDocumento(), dto.getNumeroDocumento(), dto.getCorreo(),dto.getContrasena(), dto.getRol(), dto.getCelular());
         return new DtoRespuesta<>(this.servicioEditarUsuario.ejecutar(usuario, codigo));
     }
 
