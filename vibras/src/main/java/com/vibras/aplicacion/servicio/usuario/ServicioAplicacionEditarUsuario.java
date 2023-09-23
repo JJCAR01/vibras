@@ -4,7 +4,6 @@ package com.vibras.aplicacion.servicio.usuario;
 
 import com.vibras.aplicacion.dto.DtoRespuesta;
 import com.vibras.aplicacion.dto.DtoUsuario;
-import com.vibras.dominio.modelo.RolUsuario;
 import com.vibras.dominio.modelo.Usuario;
 import com.vibras.dominio.servicio.usuario.ServicioEditarUsuario;
 
