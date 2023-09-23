@@ -12,9 +12,11 @@ import lombok.Setter;
 public class DtoUsuario {
     private String nombre;
     private String apellido;
+    private int tipoDocumento;
+    private String numeroDocumento;
     private String correo;
     private String contrasena;
-    private int tipoUsuario;
+    private String rol;
     private String celular;
 
 

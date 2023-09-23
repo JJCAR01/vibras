@@ -4,7 +4,6 @@ package com.vibras.infraestructura.adaptador.repositorio;
 import com.vibras.dominio.dto.DtoUsuarioResumen;
 import com.vibras.dominio.modelo.Usuario;
 import com.vibras.dominio.puerto.RepositorioUsuario;
-import com.vibras.infraestructura.adaptador.entidad.EntidadRolUsuario;
 import com.vibras.infraestructura.adaptador.entidad.EntidadUsuario;
 import com.vibras.infraestructura.adaptador.repositorio.jpa.RepositorioUsuarioJpa;
 import org.springframework.stereotype.Repository;
@@ -29,7 +28,7 @@ public class RepositorioUsuarioPostgresSQL implements RepositorioUsuario {
         return null;
     }
 
-
+    @Override
     public DtoUsuarioResumen consultarPorId(Long id) {
 
         return this.repositorioUsuarioJpa
@@ -38,6 +37,7 @@ public class RepositorioUsuarioPostgresSQL implements RepositorioUsuario {
                 .orElse(null);
     }
 
+    @Override
     public Long guardar(Usuario usuario) {
 
 
@@ -49,21 +49,41 @@ public class RepositorioUsuarioPostgresSQL implements RepositorioUsuario {
 
     @Override
     public boolean existe(Usuario usuario) {
-        return false;
+
+        return this.repositorioUsuarioJpa.findByNombreAndApellido(usuario.getNombre(), usuario.getApellido()) !=null;
     }
 
     @Override
     public Long eliminar(Long id) {
-        return null;
+
+        this.repositorioUsuarioJpa.deleteById(id);
+        return id;
     }
 
     @Override
     public Long modificar(Usuario usuario, Long id) {
-        return null;
+        repositorioUsuarioJpa.findById(id);
+        EntidadUsuario entidadUsuario = new EntidadUsuario();
+        entidadUsuario.setId(id);
+        entidadUsuario.setNombre(usuario.getNombre());
+        entidadUsuario.setApellido(usuario.getApellido());
+        entidadUsuario.setTipoDocumento(usuario.getTipoDocumento());
+        entidadUsuario.setNumeroDocumento(usuario.getNumeroDocumento());
+        entidadUsuario.setCorreo(usuario.getCorreo());
+        entidadUsuario.setContrasena(usuario.getContrasena());
+        entidadUsuario.setRol(usuario.getRol());
+        entidadUsuario.setCelular(usuario.getCelular());
+        repositorioUsuarioJpa.save(entidadUsuario);
+        return id;
     }
 
     @Override
-    public Usuario consultar(String usuario, String clave) {
-        return null;
+    public Usuario consultar(String usuario, String contrasena) {
+        EntidadUsuario entidadUsuario = this.repositorioUsuarioJpa.findByNombreAndContrasena(usuario,contrasena);
+        if (entidadUsuario == null){
+            return  null;
+        }
+
+        return Usuario.of(entidadUsuario.getNombre(),entidadUsuario.getApellido(),entidadUsuario.getTipoDocumento(),entidadUsuario.getNumeroDocumento(),entidadUsuario.getCorreo(), entidadUsuario.getContrasena(), entidadUsuario.getRol(), entidadUsuario.getCelular());
     }
 }

@@ -1,5 +1,7 @@
 package com.vibras.infraestructura.aspectos.servicio;
 
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.impl.TextCodec;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpHeaders;
@@ -13,16 +15,16 @@ import java.util.List;
 public class AuthorizationService {
     private final Environment environment;
     public AuthorizationService(Environment environment){ this.environment = environment;}
-    /*
+
     public boolean isAuthorized(String roleToAutorized){
         String token = obtenerTokenActual();
         final SigningKeyResolver firma = obtenerFirma();
-        List<String> roles = obtenerRoles(token, firma);
-        return roles.indexOf(roleToAuthorized) != -1;
+        String roles = obtenerRoles(token, firma);
+        return roles.indexOf(roleToAutorized) != -1;
     }
 
-    private List<String> obtenerRoles(String token, SigningKeyResolver signingKeyResolver) {
-        return (List<String>) Jwts.parser()
+    private String obtenerRoles(String token, SigningKeyResolver signingKeyResolver) {
+        return (String) Jwts.parser()
                 .setSigningKeyResolver(signingKeyResolver)
                 .parseClaimsJws(token).getBody().get("roles");
     }
@@ -39,5 +41,5 @@ public class AuthorizationService {
     private String obtenerTokenActual() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         return request.getHeader(HttpHeaders.AUTHORIZATION);
-    }*/
+    }
 }

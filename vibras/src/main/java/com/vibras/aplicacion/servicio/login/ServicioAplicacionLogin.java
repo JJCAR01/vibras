@@ -20,13 +20,13 @@ public class ServicioAplicacionLogin {
     }
 
     public DtoRespuesta<String> ejecutar(DtoLogin dto){
-        String calveCifrado = this.servicioCifrarTexto.ejecutar(dto.getClave());
+        String calveCifrado = this.servicioCifrarTexto.ejecutar(dto.getContrasena());
         Usuario usuario = this.repositorioUsuario.consultar(dto.getUsuario(), calveCifrado);
 
         if(usuario == null){
             throw new IllegalStateException("usuario o clave incorrecta");
         }
-
-        return  new DtoRespuesta<>(this.servicioGenerarToken.ejecutar(dto.getUsuario()));
+        String rol = usuario.getRol();
+        return  new DtoRespuesta<>(this.servicioGenerarToken.ejecutar(dto.getUsuario(),rol));
     }
 }

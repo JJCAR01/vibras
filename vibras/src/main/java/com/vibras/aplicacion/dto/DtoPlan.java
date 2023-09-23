@@ -7,7 +7,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class DtoPlan {
+
+    public DtoPlan() {
+    }
 }

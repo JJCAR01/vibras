@@ -3,17 +3,13 @@ package com.vibras.dominio.modelo;
 import com.vibras.dominio.utilitario.UtilNumero;
 import com.vibras.dominio.utilitario.UtilTexto;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
-
-
 public class Usuario {
     private final String nombre;
     private final String apellido;
-    private  int tipoDocumento;
-    private  String numeroDocumento;
+    private int tipoDocumento;
+    private final String numeroDocumento;
     private final String correo;
     private String contrasena;
     private String rol;

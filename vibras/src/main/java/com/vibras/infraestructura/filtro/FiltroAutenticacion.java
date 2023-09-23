@@ -1,9 +1,7 @@
 package com.vibras.infraestructura.filtro;
 
 import com.vibras.infraestructura.servicio.ServicioValidacionToken;
-import jakarta.servlet.Filter;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
+import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
@@ -46,5 +44,10 @@ public class FiltroAutenticacion implements Filter {
             }
         }
         return shouldNotFilter;
+    }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
     }
 }

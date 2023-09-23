@@ -8,6 +8,7 @@ import com.vibras.aplicacion.servicio.usuario.ServicioAplicacionEliminarUsuario;
 import com.vibras.aplicacion.servicio.usuario.ServicioAplicacionGuardarUsuario;
 import com.vibras.aplicacion.servicio.usuario.ServicioAplicacionListarUsuario;
 import com.vibras.dominio.dto.DtoUsuarioResumen;
+import com.vibras.infraestructura.aspectos.SecuredResource;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class ControladorUsuario {
     }
 
     @GetMapping
+    @SecuredResource(name = "usuarios")
     public List<DtoUsuarioResumen> listar(){ return servicioListarUsuario.ejecutar();}
 
     @GetMapping("/{codigo}")

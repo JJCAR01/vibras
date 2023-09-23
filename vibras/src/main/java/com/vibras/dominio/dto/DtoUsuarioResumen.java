@@ -1,6 +1,8 @@
 package com.vibras.dominio.dto;
 
+import lombok.Getter;
 
+@Getter
 public class DtoUsuarioResumen {
     private String nombre;
     private String apellido;

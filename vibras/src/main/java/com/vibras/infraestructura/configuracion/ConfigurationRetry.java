@@ -2,9 +2,9 @@ package com.vibras.infraestructura.configuracion;
 
 
 import org.springframework.context.annotation.Configuration;
-//import org.springframework.retry.annotation.EnableRetry;
+import org.springframework.retry.annotation.EnableRetry;
 
 @Configuration
-//@EnableRetry
+@EnableRetry
 public class ConfigurationRetry {
 }
