@@ -20,7 +20,8 @@ public class ServicioAplicacionEditarUsuario {
     public DtoRespuesta<Long> ejecutar(DtoUsuario dto, Long codigo){
 
         Usuario usuario = Usuario.of(dto.getNombre(),dto.getApellido(), dto.getTipoDocumento(), dto.getNumeroDocumento(), dto.getCorreo(),dto.getContrasena(), dto.getRol(), dto.getCelular());
-        return new DtoRespuesta<>(this.servicioEditarUsuario.ejecutar(usuario, codigo));
+        return
+                new DtoRespuesta<>(this.servicioEditarUsuario.ejecutar(usuario, codigo));
     }
 
 }
