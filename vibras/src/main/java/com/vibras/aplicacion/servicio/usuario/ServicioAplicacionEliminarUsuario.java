@@ -3,7 +3,9 @@ package com.vibras.aplicacion.servicio.usuario;
 
 import com.vibras.aplicacion.dto.DtoRespuesta;
 import com.vibras.dominio.servicio.usuario.ServicioEliminarUsuario;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ServicioAplicacionEliminarUsuario {
 
     private final ServicioEliminarUsuario servicioEliminarUsuario;

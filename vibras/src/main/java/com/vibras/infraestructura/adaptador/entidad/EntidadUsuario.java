@@ -1,6 +1,7 @@
 package com.vibras.infraestructura.adaptador.entidad;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "usuario")
 public class EntidadUsuario {
 
@@ -26,7 +28,6 @@ public class EntidadUsuario {
 
    // @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
    // @JoinColumn(name = "id_usuario")
-    public EntidadUsuario(){}
 
     public EntidadUsuario(String nombre,String apellido,int tipoDocumento, String numeroDocumento,String correo,String contrasena,String rol,String celular){
         this.nombre = nombre;

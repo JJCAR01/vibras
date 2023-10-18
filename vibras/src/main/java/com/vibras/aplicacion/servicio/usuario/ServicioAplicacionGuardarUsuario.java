@@ -6,10 +6,11 @@ import com.vibras.aplicacion.dto.DtoUsuario;
 import com.vibras.dominio.modelo.Usuario;
 import com.vibras.dominio.servicio.ServicioCifrarTexto;
 import com.vibras.dominio.servicio.usuario.ServicioGuardarUsuario;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
-
+@Component
 public class ServicioAplicacionGuardarUsuario {
 
     private final ServicioGuardarUsuario servicioGuardarUsuario;
