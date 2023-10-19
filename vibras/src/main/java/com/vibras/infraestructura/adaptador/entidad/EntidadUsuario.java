@@ -1,17 +1,17 @@
 package com.vibras.infraestructura.adaptador.entidad;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-import javax.persistence.*;
-
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "usuario")
+@Table(name = "usuarios")
+
 public class EntidadUsuario {
 
     @Id
@@ -26,8 +26,6 @@ public class EntidadUsuario {
     private String rol;
     private String celular;
 
-   // @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-   // @JoinColumn(name = "id_usuario")
 
     public EntidadUsuario(String nombre,String apellido,int tipoDocumento, String numeroDocumento,String correo,String contrasena,String rol,String celular){
         this.nombre = nombre;

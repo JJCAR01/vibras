@@ -6,7 +6,9 @@ import com.vibras.dominio.modelo.Usuario;
 import com.vibras.dominio.puerto.RepositorioUsuario;
 import com.vibras.dominio.servicio.ServicioCifrarTexto;
 import com.vibras.dominio.servicio.ServicioGenerarToken;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ServicioAplicacionLogin {
 
     private final ServicioGenerarToken servicioGenerarToken;

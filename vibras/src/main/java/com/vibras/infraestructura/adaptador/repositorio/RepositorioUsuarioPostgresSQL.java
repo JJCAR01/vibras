@@ -8,6 +8,7 @@ import com.vibras.infraestructura.adaptador.entidad.EntidadUsuario;
 import com.vibras.infraestructura.adaptador.repositorio.jpa.RepositorioUsuarioJpa;
 import org.springframework.stereotype.Repository;
 
+
 import java.util.List;
 
 @Repository
@@ -23,10 +24,6 @@ public class RepositorioUsuarioPostgresSQL implements RepositorioUsuario {
         return entidades.stream().map(entidad -> new DtoUsuarioResumen(entidad.getNombre(),entidad.getApellido(),entidad.getTipoDocumento(),entidad.getNumeroDocumento(), entidad.getCorreo(), entidad.getContrasena(), entidad.getRol(), entidad.getCelular())).toList();
     }
 
-    @Override
-    public DtoUsuarioResumen consultarPorId(long id) {
-        return null;
-    }
 
     @Override
     public DtoUsuarioResumen consultarPorId(Long id) {
@@ -39,7 +36,6 @@ public class RepositorioUsuarioPostgresSQL implements RepositorioUsuario {
 
     @Override
     public Long guardar(Usuario usuario) {
-
 
         EntidadUsuario entidadUsuario = new EntidadUsuario(usuario.getNombre(), usuario.getApellido(), usuario.getTipoDocumento(),usuario.getNumeroDocumento(), usuario.getCorreo(), usuario.getContrasena(), usuario.getRol(), usuario.getCelular());
 

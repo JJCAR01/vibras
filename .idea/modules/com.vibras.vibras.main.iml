@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
-  <component name="AdditionalModuleElements">
+  <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../../vibras/build/generated/sources/annotationProcessor/java/main">
       <sourceFolder url="file://$MODULE_DIR$/../../vibras/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
     </content>
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="ad8ef616-89b3-4943-a4b3-f3e7ef64558d" />
   </component>
 </module>

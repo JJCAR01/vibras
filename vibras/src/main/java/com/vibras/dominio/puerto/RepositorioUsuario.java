@@ -8,7 +8,6 @@ import java.util.List;
 public interface RepositorioUsuario {
 
     List<DtoUsuarioResumen> listar();
-    DtoUsuarioResumen consultarPorId(long id);
 
     DtoUsuarioResumen consultarPorId(Long id);
 
